@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tau-prolog.min.js"></script>
+    <link rel="stylesheet" href="projetProlog.css">
+    
+</head>
+<body>
+
+    <!-- <div>
+        <p>Information du vol</p>
+        <div >
+            <input type="text" placeholder="Nom du victime" name="" id="nomVictime">
+            <input type="text" placeholder="lieu du vol" id="lieuVol">
+            <input type="date" id="dateVol">
+        </div>
+    </div>
+   
+    <div>
+        <p>Le suspect</p>
+        <div>
+            <input type="text" placeholder ="nom du suspect" id="nomVoleur">
+            <input type="text" placeholder="sur les lieu" name="" id="lieuVoleur">
+            <input type="text" placeholder="si sans argent" id="sansArgent">
+            <input type="date" id="dateVoleur">
+            <input type="jaloux de qui ?" name="" id="nomJaloux">
+        </div>
+    </div> -->
+
+    <h1>QUI EST LA VICTIME ?</h1>
+<div class="wpcf7" id="wpcf7-f156-p143-o1 formwrap">
+    <form  method="post" class="wpcf7-form" novalidate="novalidate">
+        <div style="display: none;">
+            <input type="hidden" name="_wpcf7" value="156">
+            <input type="hidden" name="_wpcf7_version" value="3.7.2">
+            <input type="hidden" name="_wpcf7_locale" value="en_US">
+            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f156-p143-o1">
+            <input type="hidden" name="_wpnonce" value="d1da331d93">
+        </div>
+        <p>
+           <span class="wpcf7-form-control-wrap Name">
+             <input type="text" name="Name" value="" size="40" class="nameinput wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Nom de la victime" id="nomVictime">
+          </span>
+          <span class="wpcf7-form-control-wrap Email">
+            <input type="text" name="Email"  size="40" class="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Lieu du vol" id="lieuVol">
+          </span>
+          <span class="wpcf7-form-control-wrap Email">
+            <input type="date" name="Email"  size="40" class="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"  id="dateVol">
+          </span>
+         
+          
+          <img class="ajax-loader" src="http://www.jordancundiff.com/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;">
+      </p>
+      <div class="wpcf7-response-output wpcf7-display-none">
+      </div>
+  </form>
+</div>
+
+<h1>QUI EST LE SUSPECT ?</h1>
+<div class="wpcf7" id="wpcf7-f156-p143-o1 formwrap">
+    <form  method="post" class="wpcf7-form" novalidate="novalidate">
+        <div style="display: none;">
+            <input type="hidden" name="_wpcf7" value="156">
+            <input type="hidden" name="_wpcf7_version" value="3.7.2">
+            <input type="hidden" name="_wpcf7_locale" value="en_US">
+            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f156-p143-o1">
+            <input type="hidden" name="_wpnonce" value="d1da331d93">
+        </div>
+        <p>
+           <span class="wpcf7-form-control-wrap Name">
+             <input type="text" name="Name" value="" size="40" class="nameinput wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Nom du suspect " id="nomVoleur">
+          </span>
+
+          
+          <span class="wpcf7-form-control-wrap Email">
+            <input type="text"   size="40" class="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Etait-il sur les lieu le jour ?" id="lieuVoleur">
+          </span>
+          <span class="wpcf7-form-control-wrap Email">
+            <input type="date"   size="40" class="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"  id="dateVoleur">
+          </span>
+         
+          <span class="wpcf7-form-control-wrap Email">
+            <input type="text"   size="40" class="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="De qui est-il jaloux ?"  id="nomJaloux">
+          </span>
+          <span class="wpcf7-form-control-wrap Email">
+            <input type="text"   size="40" class="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Est-il sans argent"  id="sansArgent">
+          </span>
+          
+          <input type="button" id="go" value="Est-il vraiment un suspect ?" class="wpcf7-form-control wpcf7-submit btn">
+          <img class="ajax-loader" src="http://www.jordancundiff.com/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;">
+      </p>
+      <div class="wpcf7-response-output wpcf7-display-none">
+      </div>
+  </form>
+</div>
+
+    <h1 id="reponse"></h1>
+    
+
+
+
+
+    <script id="likes.pl" type="text/prolog">
+        victime(jean).
+        lieu(emit).
+        jour(hier).
+      
+
+        voleur(bobs).
+        lieuVol(emit).
+        jourVol(hier).
+
+        placeVictime(X,Y,Z):-victime(X),lieu(Y),jour(Z).
+        placeVoleur(X,Y,Z):-voleur(X),lieuVol(Y),jourVol(Z).
+
+        sansArgent(oui).
+        jaloux(X,Y) :-voleur(X), victime(Y).
+
+        seFaireVoler(X,Y,Z) :- sansArgent(X);jaloux(Y,Z).
+
+        seTrouve(X,Y,Z,J,K,L) :- placeVictime(X,Y,Z), placeVoleur(J,K,L).
+
+        suspect(X,Y,Z,J,K,L,W,A,B) :- seTrouve(X,Y,Z,J,K,L) , seFaireVoler(W,A,B).
+
+    </script> 
+    <script  >
+
+         document.querySelector("#go").addEventListener("click",lauch)
+            
+
+
+        function lauch(){
+             let session= pl.create()
+             let nomVictime = document.querySelector("#nomVictime").value.toLowerCase()
+             let lieuVol = document.querySelector("#lieuVol").value.toLowerCase()
+             let dateVol = document.querySelector("#dateVol").value.toLowerCase()
+
+            
+             let nomVoleur = document.querySelector("#nomVoleur").value.toLowerCase()
+             let sansArgent = document.querySelector("#sansArgent").value.toLowerCase()
+             let dateVoleur = document.querySelector("#dateVoleur").value.toLowerCase()
+             let nomJaloux = document.querySelector("#nomJaloux").value.toLowerCase()
+             let lieuVoleur = document.querySelector("#lieuVoleur").value.toLowerCase()
+
+             dateVoleur = dateVol === dateVoleur ? "androany" : "omaly"
+             console.log(dateVoleur)
+             //consult for victime
+             session.consult(`
+             :- use_module(library(lists)).
+
+             victime(${nomVictime}).
+            lieu(${lieuVol}).
+            jour(androany).
+
+            
+             voleur(${nomVoleur}).
+        lieuVol(${lieuVoleur}).
+        jourVol(androany).
+
+        placeVictime(X,Y,Z):-victime(X),lieu(Y),jour(Z).
+        placeVoleur(X,Y,Z):-voleur(X),lieuVol(Y),jourVol(Z).
+
+
+        sansArgent(oui).
+        jaloux(X,Y) :-voleur(X), victime(Y).
+
+        seFaireVoler(X,Y,Z) :- sansArgent(X);jaloux(Y,Z).
+
+        seTrouve(X,Y,Z,J,K,L) :- placeVictime(X,Y,Z), placeVoleur(J,K,L).
+
+        suspect(X,Y,Z,J,K,L,W,A,B) :- seTrouve(X,Y,Z,J,K,L) , seFaireVoler(W,A,B).
+
+         `)   
+         session.query(`suspect(${nomVictime},${lieuVol},androany,${nomVoleur},${lieuVoleur},${dateVoleur},${sansArgent},${nomVoleur},${nomJaloux}).`);
+
+        let response = ""
+session.answers(x=> response = pl.format_answer(x),1)  
+response = response.split(" ")[0]
+
+console.log(response)
+if(response == "true"){
+    let content = document.querySelector("#reponse")
+    let contentTitle = `${nomVoleur} est un vrai suspect`
+    content.textContent = ""
+    content.textContent = contentTitle
+}else{
+    let content = document.querySelector("#reponse")
+    let contentTitle = `${nomVoleur} n'est pas du tout un suspect`
+    content.textContent = ""
+    content.textContent = contentTitle
+}
+  
+        } 
+         /* var session = pl.create();
+        session.consult( "likes.pl", {reconsult : false} );
+   
+
+        session.query("suspect(jean,emit,hier,bobs,emit,hier,non,bobs,jean).");
+        session.answers(x=>console.log(pl.format_answer(x)), 5) // X = a ; X = b.  
+ */
+    </script>
+    <script src="ani.js"></script>
+</body>
+</html>
